@@ -21,17 +21,6 @@ public class UserController {
     private final UserService userService;
 
     /**
-     * POST /api/users - Creates a new User.
-     * Uses UserCreateDTO for required input validation.
-     * Returns HTTP 201 CREATED upon success.
-     */
-    @PostMapping
-    public ResponseEntity<UserResponseDTO> createUser(@Valid @RequestBody UserCreateDTO createDTO) {
-        UserResponseDTO newUser = userService.create(createDTO);
-        return new ResponseEntity<>(newUser, HttpStatus.CREATED);
-    }
-
-    /**
      * GET /api/users - Retrieves a list of all users.
      * Returns HTTP 200 OK.
      */

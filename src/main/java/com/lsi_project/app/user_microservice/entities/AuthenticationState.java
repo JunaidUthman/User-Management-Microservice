@@ -21,10 +21,10 @@ public class AuthenticationState {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @Column(name = "current_nonce", nullable = false)
+    @Column(name = "current_nonce", nullable = true)
     private String currentNonce;
 
-    @Column(name = "nonce_generated_at", nullable = false)
+    @Column(name = "nonce_generated_at", nullable = true)
     private LocalDateTime nonceGeneratedAt = LocalDateTime.now();
 
     public AuthenticationState(User user, String nonce) {

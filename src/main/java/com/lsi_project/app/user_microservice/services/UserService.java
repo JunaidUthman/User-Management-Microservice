@@ -128,8 +128,9 @@ public class UserService {
         user.setUserRoles(userRoles);
 
         // 5. Create Initial Authentication State (e.g., generate a Nonce)
-        String initialNonce = UUID.randomUUID().toString();
-        AuthenticationState authState = new AuthenticationState(user, initialNonce);
+        AuthenticationState authState = new AuthenticationState();
+        authState.setUser(user);
+        authState.setCurrentNonce(null); // its null because the creation of the nonce logique should be implemented on the login process
         user.setAuthState(authState);
 
         // 6. Save the user (CascadeType.ALL ensures UserRole and AuthState are saved)

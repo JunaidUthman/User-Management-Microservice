@@ -34,7 +34,7 @@ public class User {
 
 
 
-    // --- Relationships ---
+    // --- Relationships ---"
 
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
